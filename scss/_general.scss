@@ -1,0 +1,256 @@
+@import "variable";
+
+
+
+
+
+:root {
+    --color_primario: #8527c3fd;
+    --color_primario_suave: #8527c383;
+    --color_blanco: #fff;
+    --altura_header: 100px;
+    --padding_left_right: 2rem;
+    --ancho_maximo: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+body {
+    background-color: #333;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.header {
+    height: var(--altura_header);
+    @extend%inicio;
+
+    
+
+    .navbar {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 var(--padding_left_right);
+    } 
+
+    .menu_hamburguesa {
+        display: none;
+    }
+
+    .menu_hamburguesa:checked + .ul_links {
+        height: calc(100vh - var(--altura_header));
+        z-index: 1;
+    }
+
+    .logo {
+        color: var(--color_blanco);
+        font-weight: bold;
+    }
+
+    .list_icon {
+        color: var(--color_blanco);
+        cursor: pointer;
+    }
+
+    .ul_links {
+        width: 100%;
+        background-color: var(--color_primario);
+        position: absolute;
+        top: var(--altura_header);
+        left: 0;
+        height: 0;
+        overflow: hidden;
+        /* height: calc(100vh - var(--altura_header)); */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+
+        transition: all .3s;
+    }
+    .link{
+        font-size: 3rem;
+        font-weight: bold;
+        color: beige;
+       
+    }
+}
+
+
+main {
+    @extend%despliegue;
+    
+
+   
+
+
+    .producto img {
+        height: 200px;
+        width: 200px;
+        margin: 20px;
+        border: solid 2px;
+    }
+
+    .imagenesProd {
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+       
+    }
+
+    .card {
+        margin: 25px;
+        z-index: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card:hover {
+        background-color: #125875;
+        box-shadow: 0px 10px 10px #125875;
+    }
+
+    .card-body {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: solid 1px;
+    }
+}
+
+footer {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    @extend%inicio;
+    padding: 50px;
+
+
+    .social {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        .redes {
+            width: 25px;
+            height: 25px;
+            border-radius: 15px;
+        }
+
+    }
+}
+
+.nosotres{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    color: pink;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    h2{
+        text-align: center;
+        padding: 20px;
+        color: hotpink
+    }
+    .general{
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+
+        .mapa{
+            padding: 40px;
+            display: flex;
+        }
+    }
+    .quienes{
+        text-align: justify;
+        padding: 30px;
+        
+    }
+    .somos{
+        text-align: justify;
+        padding: 30px;
+    }
+   
+    
+}
+
+@media (min-width:768px){
+    header{
+     
+        .labe_hamburguesa{
+            display: none;
+            
+        }
+        .ul_links{
+            display: flex !important; 
+            position: static !important;
+            width: auto !important;
+            height: auto !important;
+            flex-direction: row !important;
+            gap: 2rem !important;
+            background: none !important;
+            
+            
+            .link{
+                
+                font-size: 1.5rem !important;
+                transition: all .3s !important;
+                margin: 0 10px 0 10px !important;
+                
+            }
+            .link:hover{
+                background-color: violet !important;
+                padding: .2rem .7rem !important;
+                
+            }
+    
+        }
+    
+       
+    }
+
+
+    main{
+        height: 100%;
+        width: 100%;
+       
+    }
+    .section{
+        display: flex;
+        flex-direction: row;
+    }
+    
+
+    .imagenesProd{
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    .card {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
